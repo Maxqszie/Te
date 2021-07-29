@@ -1,0 +1,44 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int search(int arr[],int x,int y)
+{
+	int left = 0;
+	int right = y-1;
+	int a = 0;
+	while (left<=right)
+	{
+	
+	    a = (left + right) / 2;
+		if (x >arr[a])
+		{
+			left = a + 1;
+		}
+		else if (x < arr[a])
+		{
+			right = a - 1;
+		}
+		else 
+			return a;
+	}
+	    return 0;
+
+}
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+	int i = 0;
+	int a = 0;
+	printf("请输入你要查找的数字\n");
+	scanf("%d",&i);
+	int length = 0;
+	length = sizeof(arr) / sizeof(arr[0]);
+	int adress = 0;
+	adress=search(arr,i,length);
+	if (adress != 0)
+	{
+		printf("输出的最终的位置是%d", adress);
+	}
+	else
+		printf("没有找到你要查找的数字");
+	return 0;
+}
