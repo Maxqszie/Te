@@ -1,0 +1,27 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int result(int x)
+{ 
+	int a = 1;
+	int b = 1;
+	int c = 1;
+	while (x > 2)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		x--;
+	}
+	return c;
+
+}
+int main()
+{
+	int n = 0;
+	printf("请输入你要的第几个斐波那契的数字\n");
+	scanf("%d", n);
+	int adress = 0;
+	adress=result(n);
+	printf("adress=%d\n", adress);
+	return 0;
+}
