@@ -1,0 +1,22 @@
+
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int num = 0;
+	int count = 0;
+	printf("请输入你要计算的数字：\n");
+	scanf("%d", &num);
+	num = num & (~0);
+	while (num)
+	{
+	if(num%2==1)
+	{
+		count++;
+		num=num/2;
+	 } 
+	}
+	printf("输入的数字中二进制1的个数是：%d", count);
+
+	return 0;
+}
