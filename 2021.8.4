@@ -1,0 +1,23 @@
+
+#include<stdio.h>
+struct xiaoliu
+{
+	char name[20];
+	int age;
+	char adress[20];
+	char hobby[100];
+};
+int main()
+{
+	struct xiaoliu s1 = { "小刘",108,"猪圈","喜欢扣脚和让老公在门口地板睡觉" };
+	struct xiaoliu * a = &s1;
+	printf("姓名：%s\n", a->name);
+	printf("年龄：%d\n", a->age);
+	printf("住所：%s\n", a->adress);
+	printf("癖好：%s\n", a->hobby);
+	printf("姓名：%s\n", s1.name);
+	printf("年龄：%d\n", s1.age);
+	printf("住所：%s\n", s1.adress);
+	printf("癖好：5s\n", s1.hobby);
+	return 0;
+}
