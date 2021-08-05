@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	printf("请1-10之中选择你喜欢的一个数字\n");
+	int b = 1;
+	scanf("%d", &b);
+	b = ((b * 2)+6)*50;
+	int d = 0;
+	printf("如果你已经过生了请扣1：\n");
+	int f = 0;
+	scanf("%d", &f);
+	if (f > 0)
+	{
+		b = b + 1721;
+		printf("请输入你的出生年份:\n");
+		scanf("%d", &d);
+		b = b - d;
+		printf("第一个数字是你选择的数字 最后两个数字是你的年龄%d\n", b);
+	}
+	else
+	{
+		b = b + 1720;
+		printf("请输入你的出生年份:");
+		scanf("%d", &d);
+		b = b - d;
+		printf("第一个数字是你选择的数字 最后两个数字是你的年龄%d\n", b);
+	}
+
+	return 0;
+}
