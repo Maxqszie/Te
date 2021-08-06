@@ -1,0 +1,22 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int a, b, c = 0;
+	int i = 0;
+	int sum = 0;
+	printf("请输入某年某月某日：如2021，8，6\n");
+	scanf("%d,%d,%d", &a, &b, &c);
+	int arr[12] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	if (a % 400 == 0 || (a % 100 != 0 && a % 4 == 0))
+	{
+		arr[1] = 29;
+	}
+	for (i = 0; i < b - 1; i++)
+	{
+		sum = sum + arr[i];
+	}
+	sum = c + sum;
+	printf("是这一年的第：%d天\n", sum);
+	return 0;
+ }
