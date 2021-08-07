@@ -1,0 +1,47 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+	int a, b, c = 0;
+	printf("请输入你的出生年月日：如2001，6，28\n");
+	scanf("%d,%d,%d", &a, &b, &c);
+	printf("请输入今天是某年某月某日：如2021，8，7\n");
+	int d, e, f = 0;
+	scanf("%d,%d,%d", &d, &e, &f);
+	int arr[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+	int i, sumday = 0;
+	int count = 0;
+	if (a < d)
+	{
+		for (i = a; i < d; i++)
+		{
+			if (i % 400 == 0 || (i % 100 == 0 && i % 4 == 0))
+			{
+				count++;
+			}
+		}
+	}
+	sumday = (d - a - count) * 365;
+	sumday = sumday + count * 360;
+	int sum = 0;
+	if (b < e)
+	{
+		for (i = 0; i < e; i++)
+		{
+			if (i % 400 == 0 || (i % 100 == 0 && i % 4 == 0))
+			{
+				arr[1] = 29;
+			}
+			sum = sum + arr[i];
+		}
+		sumday = sumday + c;
+	}
+	else
+	{
+			sumday = sumday + (f - c);
+	}
+	int day = 0;
+	day = sum + sumday;
+	printf("你已经活了：%d\n", day);
+	return 0;
+}
