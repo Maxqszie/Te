@@ -1,0 +1,50 @@
+
+
+//int  my_strlen(char* p,int a)
+//{
+//	while (*p!='\0')
+//	{
+//		a++;
+//		p++;
+//	}
+//	return a;
+//}
+//#include<stdio.h>
+//int main()
+//{
+//	char arr[] = "welcome to china";
+//	int count = 0;
+//	int length = my_strlen(arr,count);
+//	printf("数组的字符串的个数是：:%d\n",length);
+//	return 0;
+// }
+
+#include<stdio.h>
+//int my_strlen(char* p)
+//{
+//	if (*p != '\0')
+//	{
+//		return 1 + my_strlen(p + 1);
+//	}
+//	else
+//		return 0;
+//}
+int my_strlen(char* p)
+{
+	char* start = p;
+	char* end = p;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	return end - start;
+
+}
+int main()
+{
+
+	char arr[] = "welcome to china";
+	int length = my_strlen(arr);
+	printf("最后字符串的长度是：%d\n", length);
+	return 0;
+}
