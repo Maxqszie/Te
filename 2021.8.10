@@ -1,0 +1,31 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+	char qixi[] = "chenshuxingloveliuge\0";
+	char mima[40] = {0};
+	printf("请输入你的七夕节密码;\n");
+	int i = 0;
+	int a = strlen(qixi)-1;
+	for (i = 0; i<a; i++)
+	{
+		scanf("%d", mima[i]);
+	}
+	for (i = 0; i < a; i++)
+	{
+		if (qixi[i] == mima[i])
+		{
+			printf("输入密码正确");
+		}
+		else
+		{
+			printf("输入的密码错误，请重新输入\n");
+			return 0;
+		}
+
+
+	}
+
+	return 0;
+}
