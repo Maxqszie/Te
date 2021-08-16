@@ -1,0 +1,50 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main()
+{
+
+	char c = 0;
+	int big_signed = 0; int li_signed = 0; int number=0; int spaces = 0;
+	printf("请输入一串字符：\n");
+	while ((c=getchar())!='\n');
+	{
+		if (c >= 'A' && c <= 'z')
+		{
+			big_signed++;
+		}
+		else if (c >= 'a' && c <= 'z')
+		{
+			li_signed++;
+		}
+		else if (c >= '0' && c <= '9')
+		{
+			number++;
+		}
+		else 
+		{
+			spaces++;
+		}
+	}
+	printf("大写字母有：%d 个  小写字母有:%d 个  数字有：%d个  空格有：%d个", big_signed, li_signed, number, spaces);
+	return 0;
+}
+//#include<stdio.h>
+//int main()
+//{
+//    char c;
+//    int letters = 0, spaces = 0, digits = 0, others = 0;
+//    printf("请输入一些字母：\n");
+//    while ((c = getchar()) != '\n')
+//    {
+//        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+//            letters++;
+//        else if (c >= '0' && c <= '9')
+//            digits++;
+//        else if (c == ' ')
+//            spaces++;
+//        else
+//            others++;
+//    }
+//    printf("字母=%d,数字=%d,空格=%d,其他=%d\n", letters, digits, spaces, others);
+//    return 0;
+//}
