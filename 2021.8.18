@@ -1,0 +1,34 @@
+#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//
+//	char a[1000];//因为是char类型，所以存储的范围受限。
+//	int i;
+//	for (i = 0; i < 1000; i++)
+//	{
+//		a[i] = -1 - i;
+//
+//	}
+//	printf("%d\n", strlen(a));//-1,-2.....-128 127...1.0，strlen计算0前面的数字有多少个。
+//	return 0;
+//
+//}
+//int main()
+//{
+//	unsigned char i = 0;//范围是0~255.
+//	for (i = 0; i <= 255; i++)
+//	{
+//		printf("hello world\n");//死循环，因为char类型的255+1=0；
+//	}
+//	return 0;
+//}
+int main()
+{
+	unsigned int i;
+	for (i = 9; i >= 0; i--)
+	{
+		printf("%u\n", i);//死循环，i永远为正不可能为负。
+	}
+	return 0;
+}
