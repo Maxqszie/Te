@@ -1,0 +1,42 @@
+
+//数组传参：
+#include<stdio.h>
+void test(int arr[])
+{}//ok!
+void test(int arr[10])
+{}//ok!
+void test(int* arr)
+{}//ok
+void test2(int*arr2[20])
+{}//ok
+void test2(int**arr2)
+{}
+//二维数组传参：
+void test3(int arr3[3][5])
+{}//ok
+void test3(int arr[][5])
+{}//ok
+void test3(int(*p)[5])
+{}//ok
+//一级指针传参：
+void test4(int *p)
+{}//ok
+//二级指针传参：
+void test5(int **pp)
+{}
+int main()
+{
+	int arr[10] = { 0 };
+	int arr3[3][5] = { 0 };
+	int* arr2[20] = { 0 };
+	test(arr);
+	test2(arr2);
+	test3(arr3);
+	int t = 1;
+	int* p = &t;
+	int** pp = &p;
+	test4( p);
+	test5(pp);
+	test5(&p);
+	return 0;
+}
