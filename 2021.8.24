@@ -1,0 +1,29 @@
+
+#include<stdio.h>
+int add(int x, int y)
+{
+	int z = 0;
+	z = x + y;
+	return z;
+}
+void print(char* str)
+{
+	printf("%s\n", str);
+}
+int main()
+{
+	//int a = 10; 
+	//int b = 20;
+	//int arr[10] = { 0 };
+	//int(*p)[10] = &arr;
+	//int (*pa)(int, int) = add;
+	//printf("%d\n", (*pa)(2, 3));//5
+	char a[] = { "hellow" };
+	void (*p)(char*) = print;
+	(*p)(a);
+	return 0;
+
+}
+//有趣的代码：
+//(*(void(*)()0)();
+//把0强制类型转换成：void（*）（）函数指针类型，0是一个函数的地址，调用0这个地址处的该函数。
